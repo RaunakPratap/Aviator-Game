@@ -1,0 +1,127 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #121417;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Main container */
+  .aviator-container {
+    width: 360px;
+    background: #1e2228;
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    position: relative;
+  }
+  
+  /* Form Box */
+  .form-box {
+    display: none;
+  }
+  
+  .form-box.login {
+    display: block;
+  }
+  
+  .form-box h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #f9f9f9;
+  }
+  
+  /* Input Fields */
+  .input-box {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .input-box input {
+    width: 100%;
+    padding: 10px 35px 10px 12px;
+    background: #2a2f37;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 15px;
+  }
+  
+  .input-box i {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+  }
+  
+  /* Show Password */
+  .show-password {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  
+  .show-password label {
+    cursor: pointer;
+    color: #bbb;
+  }
+  
+  /* Forgot link */
+  .forgot-link {
+    text-align: right;
+    margin-bottom: 10px;
+  }
+  
+  .forgot-link a {
+    font-size: 13px;
+    color: #7494ec;
+    text-decoration: none;
+  }
+  
+  .forgot-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Buttons */
+  .btn {
+    width: 100%;
+    padding: 12px;
+    background: #7494ec;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #5a79d6;
+  }
+  
+  /* Switch between login/register */
+  .switch-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .switch-link a {
+    color: #58a6ff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .switch-link a:hover {
+    text-decoration: underline;
+  }
+  

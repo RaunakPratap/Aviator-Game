@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aviator Login & Signup</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="form.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="aviator-container">
+    <!-- Login Form -->
+    <div class="form-box login">
+      <form action="login-process.php" method="POST">
+        <h2>Aviator Login</h2>
+        <div class="input-box">
+          <input type="email" name="email" placeholder="Email" required>
+          <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+          <input type="password" id="login-password" name="password" placeholder="Password" required>
+          <i class='bx bxs-lock-alt'></i>
+        </div>
+        <div class="show-password">
+          <input type="checkbox" id="show-login-password" onclick="togglePassword('login-password', 'show-login-password')">
+          <label for="show-login-password">Show Password</label>
+        </div>
+        <div class="forgot-link">
+          <a href="forgot-password.html">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <p class="switch-link">New to Aviator? <a href="#" class="show-register">Create an account</a></p>
+      </form>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="form-box register">
+      <form action="register-process.php" method="POST">
+        <h2>Create Aviator Account</h2>
+        <input type="hidden" name="action" value="register">
+        <div class="input-box">
+          <input type="email" name="email" placeholder="Email" required>
+          <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+          <input type="tel" name="mobile" placeholder="Mobile Number" required>
+          <i class='bx bxs-phone'></i>
+        </div>
+        <div class="input-box">
+          <input type="password" id="register-password" name="password" placeholder="Password" required>
+          <i class='bx bxs-lock-alt'></i>
+        </div>
+        <div class="show-password">
+          <input type="checkbox" id="show-register-password" onclick="togglePassword('register-password', 'show-register-password')">
+          <label for="show-register-password">Show Password</label>
+        </div>
+        <button type="submit" class="btn">Register</button>
+        <p class="switch-link">Already have an Aviator account? <a href="#" class="show-login">Login here</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Toggle password visibility
+    function togglePassword(passwordId, checkboxId) {
+      const pwd = document.getElementById(passwordId);
+      pwd.type = document.getElementById(checkboxId).checked ? "text" : "password";
+    }
+
+    // Show/hide forms
+    const loginForm = document.querySelector('.form-box.login');
+    const registerForm = document.querySelector('.form-box.register');
+    document.querySelector('.show-register').onclick = () => {
+      loginForm.style.display = 'none';
+      registerForm.style.display = 'block';
+    };
+    document.querySelector('.show-login').onclick = () => {
+      registerForm.style.display = 'none';
+      loginForm.style.display = 'block';
+    };
+  </script>
+</body>
+</html>
