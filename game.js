@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         notif.classList.remove('show');
         notif.classList.add('hidden');
-      }, 1000);
+      }, 800);
     }
   
     function pollForNotification() {
