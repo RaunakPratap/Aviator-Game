@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         notif.classList.remove('show');
         notif.classList.add('hidden');
-      }, 3000);
+      }, 1000);
     }
   
     function pollForNotification() {
@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         notif.classList.add('hide');
         setTimeout(() => notif.remove(), 500);
-      }, 3000);
+      }, 2000);
     }
   
     // ==================== INITIALIZE EVERYTHING ====================
