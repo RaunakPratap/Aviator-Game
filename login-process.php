@@ -1,14 +1,7 @@
 <?php
-// Set session cookie parameters for 30 days
-session_set_cookie_params(30*24*3600);
-ini_set('session.gc_maxlifetime', 30*24*3600);
+session_set_cookie_params(30 * 24 * 3600);
+ini_set('session.gc_maxlifetime', 30 * 24 * 3600);
 session_start();
-
-// If a user is already logged in, redirect them to the main page.
-if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
-    header("Location: index.php");
-    exit();
-}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
@@ -23,11 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($user['email'] === $email && $user['password'] === $password) {
                 $_SESSION['user'] = $user['mobile'];
 
-                // Check and create wallet with bonus if not exists
                 $walletFile = $userFolder . "/wallet.json";
                 if (!file_exists($walletFile)) {
                     file_put_contents($walletFile, json_encode(["balance" => 10]));
-                    $_SESSION['new_user_bonus'] = true; // Set session for alert
+                    $_SESSION['new_user_bonus'] = true;
                 }
 
                 header("Location: index.php");

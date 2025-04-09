@@ -59,7 +59,7 @@ body {
   }
 }
 
-/* Hamburger Menu Icon - Only Three Lines Visible */
+/* Hamburger Menu Icon - Updated Colors */
 .hamburger-menu {
   position: fixed;
   top: 20px;
@@ -79,6 +79,7 @@ body {
   place-items: center;
   box-shadow: 0 0 20px rgba(255,215,0,0.3);
   position: relative;
+  transition: border-color 0.3s ease;
 }
 
 .menu-icon span {
@@ -108,21 +109,28 @@ body {
   transform: translateY(7px);
 }
 
+.menu-icon.active {
+  border-color: var(--neon-blue);
+}
 .menu-icon.active span {
   background: transparent;
 }
 .menu-icon.active span::before {
   transform: rotate(45deg);
+  background: var(--neon-blue);
+  box-shadow: 0 0 10px var(--neon-blue);
 }
 .menu-icon.active span::after {
   transform: rotate(-45deg);
+  background: var(--neon-blue);
+  box-shadow: 0 0 10px var(--neon-blue);
 }
 
-/* Sidebar (Menu Content) - Hidden by Default */
+/* Sidebar (Menu Content) */
 .menu-content {
   position: fixed;
   top: 0;
-  left: -80vw; /* Hidden off-screen */
+  left: -80vw;
   width: 80vw;
   height: 100vh;
   background: var(--menu-bg);
@@ -139,8 +147,8 @@ body {
 .menu-content.active {
   left: 0;
 }
- /* Additional styling for the logout button */
- .logout-section button {
+
+.logout-section button {
   background-color: red;
   color: #fff;
   border: none;
@@ -152,7 +160,68 @@ body {
 .logout-section button:hover {
   opacity: 0.9;
 }
-/* Overlay for Closing Hamburger Menu */
+/* Hamburger Menu Items Styling */
+.menu-content button {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(106,13,173,0.2) 100%);
+  border: 2px solid var(--gold);
+  color: var(--neon-blue);
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.menu-content button:hover {
+  background: linear-gradient(135deg, rgba(255,215,0,0.2) 0%, rgba(106,13,173,0.3) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255,215,0,0.2);
+}
+
+/* Specific Logout Button Style */
+.menu-content .logout-section button {
+  background: linear-gradient(135deg, rgba(204,0,0,0.7) 0%, rgba(139,0,0,0.9) 100%);
+  border-color: #cc0000;
+  margin-top: 20px;
+}
+
+/* Transaction Modal Updates */
+#transModal .trans-container {
+  background: var(--space-black);
+  border: var(--vip-border);
+  box-shadow: 0 0 40px rgba(255,215,0,0.2);
+}
+
+.transaction-item {
+  background: rgba(106,13,173,0.15);
+  color: var(--neon-blue);
+}
+
+/* Status Label Glow Effect */
+.status-label {
+  text-shadow: var(--text-glow);
+}
+
+/* Toast Animation Fix */
+@keyframes fadeOut {
+  to { 
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px) scale(0.95);
+  }
+}
+
+/* Mobile Menu Button Color Fix */
+@media (max-width: 768px) {
+  .menu-content button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+/* Overlay */
 #overlay {
   position: fixed;
   top: 0;
@@ -173,7 +242,7 @@ body {
   pointer-events: all;
 }
 
-/* Perfect Deposit Section */
+/* Deposit Section */
 .deposit-section {
   margin: 20px 0;
   background: rgba(0,0,0,0.3);
@@ -209,7 +278,7 @@ body {
   text-align: center;
 }
 
-/* Dynamic Plane Animation - Very Fast & Immediate */
+/* Plane Animation */
 #plane {
   position: absolute;
   bottom: 5px;
@@ -219,7 +288,6 @@ body {
   height: 70px;
   filter: drop-shadow(0 0 10px rgba(255,215,0,0.5));
   animation: planeFloat 0s linear infinite;
-  /* JS se game start hone par display: block; kar sakte hain */
 }
 
 @keyframes planeFloat {
@@ -234,11 +302,11 @@ body {
   }
 }
 
-/* Game Area & Multiplier */
+/* Game Area */
 .game-area {
   position: relative;
   width: 100%;
-  height: 420px;  /* Thoda aur chhota area */
+  height: 420px;
   background: linear-gradient(160deg, #150A2E 0%, #220B45 100%);
   border: var(--vip-border);
   border-radius: 16px;
@@ -263,7 +331,7 @@ body {
   border: 2px solid var(--neon-blue);
 }
 
-/* VIP Bet Controls - Even Smaller Buttons */
+/* Bet Controls */
 .bet-controls {
   display: grid;
   grid-template-columns: 1fr auto auto;
@@ -295,7 +363,7 @@ body {
   font-size: 0.9rem;
   font-weight: 700;
   border-radius: 10px;
-  transition: none; /* Immediate action */
+  transition: none;
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
@@ -375,7 +443,7 @@ h1 {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 }
 
-/* Custom Scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -387,12 +455,12 @@ h1 {
   border-radius: 4px;
 }
 
-/* Performance Boost */
+/* Performance */
 *, *::before, *::after {
   will-change: transform, opacity;
 }
 
-/* Media Queries for Mobile Devices */
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .menu-content {
     width: 70vw;
@@ -422,52 +490,47 @@ h1 {
     font-size: 1.6em;
   }
   #startBtn {
-    /* Remove all transitions and delays */
     transition: none !important;
     animation: none !important;
   }
-  
-  /* For non-mobile screens (if needed) */
-  @media (min-width: 769px) {
-    #startBtn {
-      transition: none !important;
-    }
-  }
-  .notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #222;
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 10px;
-    font-size: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    z-index: 9999;
-    transition: all 0.3s ease;
-  }
+}
 
-  .notification.success {
-    background: #2ecc71;
-  }
-
-  .notification.error {
-    background: #e74c3c;
-  }
-
-  .notification.hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .notification.show {
-    opacity: 1;
-  }
-  .user-toast {
+.notification {
   position: fixed;
   top: 20px;
   right: 20px;
-  background: #4CAF50; /* green */
+  background: #222;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+.notification.success {
+  background: #2ecc71;
+}
+
+.notification.error {
+  background: #e74c3c;
+}
+
+.notification.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.notification.show {
+  opacity: 1;
+}
+
+.user-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #4CAF50;
   color: white;
   padding: 14px 20px;
   border-radius: 10px;

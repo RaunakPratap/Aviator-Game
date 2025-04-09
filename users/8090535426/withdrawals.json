@@ -1,9 +1,27 @@
 [
     {
+        "amount": 258,
+        "method": "upi",
+        "details": "Raunak428@ybl",
+        "date": "2025-04-09 04:27:59",
+        "status": "approve"
+    },
+    {
         "amount": 100,
         "method": "upi",
         "details": "Raunak428@ybl",
-        "date": "2025-04-08 15:36:48",
+        "date": "2025-04-09 04:28:24",
+        "status": "approve"
+    },
+    {
+        "amount": 1000,
+        "method": "bank",
+        "details": {
+            "account_holder": "Raunak Pratap ",
+            "account_no": "7617888587",
+            "ifsc": "Bkid007612"
+        },
+        "date": "2025-04-09 04:28:32",
         "status": "approve"
     }
 ]

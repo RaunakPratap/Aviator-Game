@@ -31,6 +31,7 @@ if (!isset($_SESSION['admin_logged_in'])):
 <head>
   <title>Admin Login</title>
   <link rel="stylesheet" href="admin.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <div class="login-container">
